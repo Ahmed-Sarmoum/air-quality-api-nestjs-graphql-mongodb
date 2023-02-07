@@ -1,0 +1,33 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Poluttion {
+  _id: String!
+  ts: String!
+  aqius: Float!
+  mainus: String!
+  aqicn: Float!
+  maincn: String!
+}
+
+type Coordinates {
+  lat: Float!
+  lon: Float!
+}
+
+type Query {
+  data(lat: Float!, lon: Float!): Coordinates!
+}
+
+type Mutation {
+  createAirQuality(CreateAirQualityInput: CreateAirQualityInput!): Poluttion!
+}
+
+input CreateAirQualityInput {
+  ts: String!
+  aqius: Float!
+  mainus: String!
+  aqicn: Float!
+  maincn: String!
+}
