@@ -24,7 +24,6 @@ export class AppService {
  
 
   getPollution(latLng: Coordinates): Observable<AxiosResponse<AirQualityModel>> {
-    
     return this.http.get<AirQualityModel>(API_URL+"/v2/nearest_city?"+
       latLng.lat+"&"+latLng.lon+"&key="+API_KEY).pipe(
         map((axiosResponse: AxiosResponse) => {
@@ -35,7 +34,6 @@ export class AppService {
 
   @Cron(CronExpression.EVERY_MINUTE)
   async getParisAirQuality() {
-    
     return this.http.get<AirQualityModel>(API_URL_PARIS+API_KEY).subscribe( res => {
       console.log(res.data.data);
       this.createAirQuality(res.data.data.current.pollution)

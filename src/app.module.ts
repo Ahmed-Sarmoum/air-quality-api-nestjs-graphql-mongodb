@@ -10,7 +10,6 @@ import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo'
 import { DatabaseModule } from './database/database.module';
 import { AppRepository } from './app.repository';
 import { MongooseModule } from '@nestjs/mongoose';
-import { AirQualityModel } from './models/ari-quality.model';
 import { AirQualitySchema } from './models/air-quality.schema';
 import { AirQualistyResolver } from './app.resolver';
 import { Poluttion } from './models/poluttion.model';
@@ -23,7 +22,7 @@ import { Poluttion } from './models/poluttion.model';
           name: Poluttion.name,
           schema: AirQualitySchema
         }
-      ]) ,
+    ]),
     HttpModule.register({
       timeout: 5000,
       maxRedirects: 5,

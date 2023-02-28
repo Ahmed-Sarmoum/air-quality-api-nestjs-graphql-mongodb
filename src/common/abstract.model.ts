@@ -6,5 +6,4 @@ import { Field, ObjectType } from "@nestjs/graphql"
 export class AbstractModel {
     @Field()
     readonly _id: string
-
 }

@@ -18,7 +18,7 @@ export class AirQualistyResolver {
     }
 
     @Query(() => Coordinates, {name: 'data'})
-    async getPollution(@Args() getUserArgs: GetAirArgs) {
-        return this.appService.getPollution(getUserArgs)
+    async getPollution(@Args() getAirArgs: GetAirArgs) {
+        return this.appService.getPollution(getAirArgs)
     }
 }
